@@ -1,0 +1,10 @@
+C:\Users\espar\source\repos\WindowsFormsHolaMundo\bin\Debug\WindowsFormsHolaMundo.exe.config
+C:\Users\espar\source\repos\WindowsFormsHolaMundo\bin\Debug\WindowsFormsHolaMundo.exe
+C:\Users\espar\source\repos\WindowsFormsHolaMundo\bin\Debug\WindowsFormsHolaMundo.pdb
+C:\Users\espar\source\repos\WindowsFormsHolaMundo\obj\Debug\WindowsFormsHolaMundo.csproj.AssemblyReference.cache
+C:\Users\espar\source\repos\WindowsFormsHolaMundo\obj\Debug\WindowsFormsHolaMundo.Form1.resources
+C:\Users\espar\source\repos\WindowsFormsHolaMundo\obj\Debug\WindowsFormsHolaMundo.Properties.Resources.resources
+C:\Users\espar\source\repos\WindowsFormsHolaMundo\obj\Debug\WindowsFormsHolaMundo.csproj.GenerateResource.cache
+C:\Users\espar\source\repos\WindowsFormsHolaMundo\obj\Debug\WindowsFormsHolaMundo.csproj.CoreCompileInputs.cache
+C:\Users\espar\source\repos\WindowsFormsHolaMundo\obj\Debug\WindowsFormsHolaMundo.exe
+C:\Users\espar\source\repos\WindowsFormsHolaMundo\obj\Debug\WindowsFormsHolaMundo.pdb

@@ -1,0 +1,16 @@
+C:\Users\espar\source\repos\Reloj\bin\Debug\Reloj.exe.config
+C:\Users\espar\source\repos\Reloj\bin\Debug\Reloj.exe
+C:\Users\espar\source\repos\Reloj\bin\Debug\Reloj.pdb
+C:\Users\espar\source\repos\Reloj\obj\Debug\Reloj.csproj.AssemblyReference.cache
+C:\Users\espar\source\repos\Reloj\obj\Debug\Reloj.Form1.resources
+C:\Users\espar\source\repos\Reloj\obj\Debug\Reloj.Properties.Resources.resources
+C:\Users\espar\source\repos\Reloj\obj\Debug\Reloj.csproj.GenerateResource.cache
+C:\Users\espar\source\repos\Reloj\obj\Debug\Reloj.csproj.CoreCompileInputs.cache
+C:\Users\espar\source\repos\Reloj\obj\Debug\Reloj.exe
+C:\Users\espar\source\repos\Reloj\obj\Debug\Reloj.pdb
+C:\Users\espar\source\repos\Reloj\obj\Debug\Reloj.FrmPais.resources
+C:\Users\espar\source\repos\Reloj\obj\Debug\Reloj.BorrarPais.resources
+C:\Users\espar\source\repos\Reloj\bin\Debug\Reloj.exe.manifest
+C:\Users\espar\source\repos\Reloj\bin\Debug\Reloj.application
+C:\Users\espar\source\repos\Reloj\obj\Debug\Reloj.exe.manifest
+C:\Users\espar\source\repos\Reloj\obj\Debug\Reloj.application

@@ -1,0 +1,14 @@
+C:\Users\espar\source\repos\Tarea1.4\obj\Debug\Tarea1._4.Form1.resources
+C:\Users\espar\source\repos\Tarea1.4\obj\Debug\Tarea1._4.Properties.Resources.resources
+C:\Users\espar\source\repos\Tarea1.4\obj\Debug\Tarea1.4.csproj.GenerateResource.cache
+C:\Users\espar\source\repos\Tarea1.4\obj\Debug\Tarea1.4.csproj.CoreCompileInputs.cache
+C:\Users\espar\source\repos\Tarea1.4\bin\Debug\Tarea1.4.exe.config
+C:\Users\espar\source\repos\Tarea1.4\bin\Debug\Tarea1.4.exe
+C:\Users\espar\source\repos\Tarea1.4\bin\Debug\Tarea1.4.pdb
+C:\Users\espar\source\repos\Tarea1.4\obj\Debug\Tarea1.4.exe
+C:\Users\espar\source\repos\Tarea1.4\obj\Debug\Tarea1.4.pdb
+C:\Users\espar\source\repos\Tarea1.4\obj\Debug\Tarea1.4.csproj.AssemblyReference.cache
+C:\Users\espar\source\repos\Tarea1.4\bin\Debug\Tarea1.4.exe.manifest
+C:\Users\espar\source\repos\Tarea1.4\bin\Debug\Tarea1.4.application
+C:\Users\espar\source\repos\Tarea1.4\obj\Debug\Tarea1.4.exe.manifest
+C:\Users\espar\source\repos\Tarea1.4\obj\Debug\Tarea1.4.application

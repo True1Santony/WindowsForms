@@ -1,0 +1,10 @@
+C:\Users\espar\source\repos\TAREA 2.1\obj\Debug\TAREA 2.1.csproj.AssemblyReference.cache
+C:\Users\espar\source\repos\TAREA 2.1\obj\Debug\TAREA_2._1.Form1.resources
+C:\Users\espar\source\repos\TAREA 2.1\obj\Debug\TAREA_2._1.Properties.Resources.resources
+C:\Users\espar\source\repos\TAREA 2.1\obj\Debug\TAREA 2.1.csproj.GenerateResource.cache
+C:\Users\espar\source\repos\TAREA 2.1\obj\Debug\TAREA 2.1.csproj.CoreCompileInputs.cache
+C:\Users\espar\source\repos\TAREA 2.1\bin\Debug\TAREA 2.1.exe.config
+C:\Users\espar\source\repos\TAREA 2.1\bin\Debug\TAREA 2.1.exe
+C:\Users\espar\source\repos\TAREA 2.1\bin\Debug\TAREA 2.1.pdb
+C:\Users\espar\source\repos\TAREA 2.1\obj\Debug\TAREA 2.1.exe
+C:\Users\espar\source\repos\TAREA 2.1\obj\Debug\TAREA 2.1.pdb
