@@ -37,23 +37,24 @@ namespace TAREA_2._1
 
             MessageBox.Show(ctn.State.ToString());
 
-            ///////////////////////////////////////////////
+            //interfaz comandos sql
             IDbCommand cmd = ctn.CreateCommand();
 
             cmd.CommandText = "select * from categories";
-
+            
+            //interfaz lectura por tupla
             IDataReader lector = cmd.ExecuteReader();
 
             while (lector.Read())
 
             {
 
-                //this.listBox1.Items.Add(lector.GetString(1));
+                //se crean los darioButton por cada vuelta del while
                 RadioButton radioButton = new RadioButton();
-                radioButton.Text = lector.GetString(1);
-                radioButton.Tag = lector.GetInt32(0);
+                radioButton.Text = lector.GetString(1);// campo 2 de la tabla, dataType Text  
+                radioButton.Tag = lector.GetInt32(0);// PrimaryKey campo 1 de la tabla dataType AutoInc
                 //radioButton.AutoSize = true;
-                radioButton.Font = new Font(radioButton.Font.FontFamily, 10, FontStyle.Bold);
+                radioButton.Font = new Font(radioButton.Font.FontFamily, 10, FontStyle.Bold);//formato
                 radioButton.Location = new Point(20, y);
                 y += 40;
                 radioButton.Click += new System.EventHandler(this.SelecionaRadioButton);
@@ -65,19 +66,26 @@ namespace TAREA_2._1
         }
 
 
+        /// <summary>
+        /// Metod que se asocia a cada Radio button creados en tiempo de ejecucion
+        /// Limpia los listBox, creao un objeto de OleDbCommand y hace un select en Productos
+        /// en función de CategoryId 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelecionaRadioButton(object sender, EventArgs e)
         {
-            o = sender;//para actualizar
-            EventArgs a = e;//para actualizar
+            o = sender;//para actualizar en btnActualizar_Click()
+            EventArgs a = e;//para actualizar en btnActualizar_Click()
             lstbProductId.Items.Clear();
             lstbProductName.Items.Clear();
             lstbUnitPrice.Items.Clear();
             lstbUnitStock.Items.Clear();
 
             RadioButton radioButton = (RadioButton)sender;
-            int pkParametro = (int)radioButton.Tag;//recupero primary key
+            int pkParametro = (int)radioButton.Tag;//recupero primary key de categories
 
-            string campoParametro = radioButton.Text;//recupero el CategoryName
+            // no se usa string campoParametro = radioButton.Text;//recupero el CategoryName
 
             string sql = "select * from Products where categoryId=@Code";
 
@@ -105,16 +113,17 @@ namespace TAREA_2._1
 
         }
 
+        /// <summary>
+        /// Metodo seleccion de indice de los ListBox, agregado en diseño. Todos los ListBox tendrán misma longitud, se puede usar sin el problema
+        /// de distintas longitudes. Evita las retro-llamadas entre los listBox con condiciones if. Establece en los campos TextBox
+        /// la seleccion desde cualquier ListBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstb_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListBox lstbSeleccionado = (ListBox)sender;
             int index = lstbSeleccionado.SelectedIndex;
-
-            /*lstbProductName.SetSelected(index, true);
-            lstbUnitPrice.SetSelected(index, true);
-            lstbUnitStock.SetSelected(index, true);
-            lstbProductId.SetSelected(index, true);
-            */
             
             // Verificar si el índice es diferente antes de establecer la selección si no entra en bucle infinito y falla.
             if (index != lstbProductName.SelectedIndex)
@@ -141,13 +150,16 @@ namespace TAREA_2._1
             txtbProductId.Text = lstbProductId.SelectedItem.ToString();
             txtbUnitPrice.Text = lstbUnitPrice.SelectedItem.ToString();
             txtbUnitStock.Text = lstbUnitStock.SelectedItem.ToString();
-            /*lstbUnitPrice.SetSelected(index, true);
-            lstbUnitStock.SetSelected(index, true);
-            lstbProductId.SetSelected(index, true);
-            */
+            
 
         }
 
+        /// <summary>
+        /// Actualiza siempre, si se pulsa en el boton de actualizar. En el programa double se reconoce con ","
+        /// en SQL base de datos lo reconoce con "." asi que se sustituye la "," por "." para que los dos funcionen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
 
@@ -157,45 +169,34 @@ namespace TAREA_2._1
 
             cmd.Connection = ctn;
 
-            cmd.CommandText = "UPDATE Products SET ProductName='"+txtbProductName.Text+"', UnitPrice="+int.Parse(txtbUnitPrice.Text)+", UnitsInStock="+int.Parse(txtbUnitStock.Text)+" WHERE ProductID="+int.Parse(txtbProductId.Text);
+            String reconvertido = txtbUnitPrice.Text.Replace(",", ".");
 
-            MessageBox.Show(cmd.ExecuteNonQuery().ToString());
+            try
+            {
+                double probarLoIntrodocido = double.Parse(txtbUnitPrice.Text);// solo para lanzar excepcion en caso de que se introduzca un valor invalido
+                cmd.CommandText = "UPDATE Products SET ProductName='" + txtbProductName.Text + "', UnitPrice=" + reconvertido + ", UnitsInStock=" + int.Parse(txtbUnitStock.Text) + " WHERE ProductID=" + int.Parse(txtbProductId.Text);
 
-            SelecionaRadioButton(o, a);
-            txtbProductId.Clear();
-            txtbProductName.Clear();
-            txtbUnitPrice.Clear();
-            txtbUnitStock.Clear();
+                MessageBox.Show(cmd.ExecuteNonQuery().ToString());
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al actualizar: " + ex.Message);
+            }
+            finally
+            {
+                SelecionaRadioButton(o, a);
+                txtbProductId.Clear();
+                txtbProductName.Clear();
+                txtbUnitPrice.Clear();
+                txtbUnitStock.Clear();
+
+                cmd.Dispose();
+            }
+             
+
+            
 
         }
 
-
-        /*private void lstbProductName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int index = lstbProductName.SelectedIndex;
-
-            lstbProductId.SetSelected(index, true);
-            lstbUnitPrice.SetSelected(index, true);
-            lstbUnitStock.SetSelected(index, true);
-           // lstbProductName.SelectedIndex = lstbProductId.SelectedIndex = lstbUnitPrice.SelectedIndex = lstbUnitStock.SelectedIndex;
-        }
-
-        private void lstbUnitPrice_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int index = lstbUnitPrice.SelectedIndex;
-
-            lstbProductName.SetSelected(index, true);
-            lstbProductId.SetSelected(index, true);
-            lstbUnitStock.SetSelected(index, true);
-        }
-
-        private void lstbUnitStock_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int index = lstbUnitStock.SelectedIndex;
-
-            lstbProductName.SetSelected(index, true);
-            lstbUnitPrice.SetSelected(index, true);
-            lstbProductId.SetSelected(index, true);
-        }*/
     }
 }
