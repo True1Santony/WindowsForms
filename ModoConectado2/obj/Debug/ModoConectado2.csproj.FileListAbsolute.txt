@@ -1,0 +1,10 @@
+C:\Users\espar\source\repos\ModoConectado2\bin\Debug\ModoConectado2.exe.config
+C:\Users\espar\source\repos\ModoConectado2\bin\Debug\ModoConectado2.exe
+C:\Users\espar\source\repos\ModoConectado2\bin\Debug\ModoConectado2.pdb
+C:\Users\espar\source\repos\ModoConectado2\obj\Debug\ModoConectado2.csproj.AssemblyReference.cache
+C:\Users\espar\source\repos\ModoConectado2\obj\Debug\ModoConectado2.Form1.resources
+C:\Users\espar\source\repos\ModoConectado2\obj\Debug\ModoConectado2.Properties.Resources.resources
+C:\Users\espar\source\repos\ModoConectado2\obj\Debug\ModoConectado2.csproj.GenerateResource.cache
+C:\Users\espar\source\repos\ModoConectado2\obj\Debug\ModoConectado2.csproj.CoreCompileInputs.cache
+C:\Users\espar\source\repos\ModoConectado2\obj\Debug\ModoConectado2.exe
+C:\Users\espar\source\repos\ModoConectado2\obj\Debug\ModoConectado2.pdb
