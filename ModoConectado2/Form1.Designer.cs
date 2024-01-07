@@ -42,7 +42,7 @@ namespace ModoConectado2
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.txtFechaAlta = new System.Windows.Forms.TextBox();
             this.txtComision = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtbBuscar = new System.Windows.Forms.TextBox();
             this.lblDepartamento = new System.Windows.Forms.Label();
             this.lblLocalizacion = new System.Windows.Forms.Label();
             this.lblApellidos = new System.Windows.Forms.Label();
@@ -59,6 +59,10 @@ namespace ModoConectado2
             this.btnBajar = new System.Windows.Forms.Button();
             this.btnSubir = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.lstbOcultoID = new System.Windows.Forms.ListBox();
+            this.txtOcultoID = new System.Windows.Forms.TextBox();
+            this.txtIDdepartamento = new System.Windows.Forms.TextBox();
+            this.lstbIDdepartamento = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lstbDepartamento
@@ -69,6 +73,7 @@ namespace ModoConectado2
             this.lstbDepartamento.Size = new System.Drawing.Size(120, 95);
             this.lstbDepartamento.TabIndex = 0;
             this.lstbDepartamento.Click += new System.EventHandler(this.lstbDepartamento_Click);
+            this.lstbDepartamento.SelectedIndexChanged += new System.EventHandler(this.lstbDepartamento_SelectedIndexChanged);
             // 
             // lstbLocalizacion
             // 
@@ -126,11 +131,14 @@ namespace ModoConectado2
             // 
             // lstbBuscarPor
             // 
+            this.lstbBuscarPor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstbBuscarPor.FormattingEnabled = true;
+            this.lstbBuscarPor.ItemHeight = 20;
             this.lstbBuscarPor.Location = new System.Drawing.Point(137, 479);
             this.lstbBuscarPor.Name = "lstbBuscarPor";
-            this.lstbBuscarPor.Size = new System.Drawing.Size(120, 95);
+            this.lstbBuscarPor.Size = new System.Drawing.Size(120, 104);
             this.lstbBuscarPor.TabIndex = 7;
+            this.lstbBuscarPor.SelectedIndexChanged += new System.EventHandler(this.lstbBuscarPor_SelectedIndexChanged);
             // 
             // txtApellidos
             // 
@@ -167,12 +175,12 @@ namespace ModoConectado2
             this.txtComision.Size = new System.Drawing.Size(90, 20);
             this.txtComision.TabIndex = 12;
             // 
-            // textBox6
+            // txtbBuscar
             // 
-            this.textBox6.Location = new System.Drawing.Point(317, 521);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(95, 20);
-            this.textBox6.TabIndex = 13;
+            this.txtbBuscar.Location = new System.Drawing.Point(317, 521);
+            this.txtbBuscar.Name = "txtbBuscar";
+            this.txtbBuscar.Size = new System.Drawing.Size(95, 20);
+            this.txtbBuscar.TabIndex = 13;
             // 
             // lblDepartamento
             // 
@@ -277,6 +285,7 @@ namespace ModoConectado2
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnNuevo
             // 
@@ -291,6 +300,7 @@ namespace ModoConectado2
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnBorrar
             // 
@@ -305,6 +315,7 @@ namespace ModoConectado2
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnGuardar
             // 
@@ -319,6 +330,7 @@ namespace ModoConectado2
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnBajar
             // 
@@ -360,11 +372,45 @@ namespace ModoConectado2
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // lstbOcultoID
+            // 
+            this.lstbOcultoID.FormattingEnabled = true;
+            this.lstbOcultoID.Location = new System.Drawing.Point(10, 43);
+            this.lstbOcultoID.Name = "lstbOcultoID";
+            this.lstbOcultoID.Size = new System.Drawing.Size(120, 95);
+            this.lstbOcultoID.TabIndex = 30;
+            // 
+            // txtOcultoID
+            // 
+            this.txtOcultoID.Location = new System.Drawing.Point(12, 144);
+            this.txtOcultoID.Name = "txtOcultoID";
+            this.txtOcultoID.Size = new System.Drawing.Size(118, 20);
+            this.txtOcultoID.TabIndex = 31;
+            // 
+            // txtIDdepartamento
+            // 
+            this.txtIDdepartamento.Location = new System.Drawing.Point(489, 144);
+            this.txtIDdepartamento.Name = "txtIDdepartamento";
+            this.txtIDdepartamento.Size = new System.Drawing.Size(118, 20);
+            this.txtIDdepartamento.TabIndex = 32;
+            // 
+            // lstbIDdepartamento
+            // 
+            this.lstbIDdepartamento.FormattingEnabled = true;
+            this.lstbIDdepartamento.Location = new System.Drawing.Point(489, 43);
+            this.lstbIDdepartamento.Name = "lstbIDdepartamento";
+            this.lstbIDdepartamento.Size = new System.Drawing.Size(120, 95);
+            this.lstbIDdepartamento.TabIndex = 33;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 651);
+            this.Controls.Add(this.lstbIDdepartamento);
+            this.Controls.Add(this.txtIDdepartamento);
+            this.Controls.Add(this.txtOcultoID);
+            this.Controls.Add(this.lstbOcultoID);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnBorrar);
@@ -381,7 +427,7 @@ namespace ModoConectado2
             this.Controls.Add(this.lblApellidos);
             this.Controls.Add(this.lblLocalizacion);
             this.Controls.Add(this.lblDepartamento);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtbBuscar);
             this.Controls.Add(this.txtComision);
             this.Controls.Add(this.txtFechaAlta);
             this.Controls.Add(this.txtSalario);
@@ -418,7 +464,7 @@ namespace ModoConectado2
         private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.TextBox txtFechaAlta;
         private System.Windows.Forms.TextBox txtComision;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtbBuscar;
         private System.Windows.Forms.Label lblDepartamento;
         private System.Windows.Forms.Label lblLocalizacion;
         private System.Windows.Forms.Label lblApellidos;
@@ -435,6 +481,10 @@ namespace ModoConectado2
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ListBox lstbOcultoID;
+        private System.Windows.Forms.TextBox txtOcultoID;
+        private System.Windows.Forms.TextBox txtIDdepartamento;
+        private System.Windows.Forms.ListBox lstbIDdepartamento;
     }
 }
 
