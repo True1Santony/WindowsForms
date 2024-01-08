@@ -379,6 +379,7 @@ namespace ModoConectado2
             this.lstbOcultoID.Name = "lstbOcultoID";
             this.lstbOcultoID.Size = new System.Drawing.Size(120, 95);
             this.lstbOcultoID.TabIndex = 30;
+            this.lstbOcultoID.Visible = false;
             // 
             // txtOcultoID
             // 
@@ -386,6 +387,7 @@ namespace ModoConectado2
             this.txtOcultoID.Name = "txtOcultoID";
             this.txtOcultoID.Size = new System.Drawing.Size(118, 20);
             this.txtOcultoID.TabIndex = 31;
+            this.txtOcultoID.Visible = false;
             // 
             // txtIDdepartamento
             // 
@@ -393,6 +395,7 @@ namespace ModoConectado2
             this.txtIDdepartamento.Name = "txtIDdepartamento";
             this.txtIDdepartamento.Size = new System.Drawing.Size(118, 20);
             this.txtIDdepartamento.TabIndex = 32;
+            this.txtIDdepartamento.Visible = false;
             // 
             // lstbIDdepartamento
             // 
@@ -401,6 +404,7 @@ namespace ModoConectado2
             this.lstbIDdepartamento.Name = "lstbIDdepartamento";
             this.lstbIDdepartamento.Size = new System.Drawing.Size(120, 95);
             this.lstbIDdepartamento.TabIndex = 33;
+            this.lstbIDdepartamento.Visible = false;
             // 
             // Form1
             // 
@@ -443,6 +447,7 @@ namespace ModoConectado2
             this.Controls.Add(this.lstbDepartamento);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -15,15 +15,20 @@ namespace ModoConectado2
     {
 
         private OleDbConnection ctn;
-        private int index = 0;
-        private string sEscogido=null;
+        private int index = 0;//para desplazarse con las flechas
+        private string sEscogido=null;//guarda el string elegido de la lista de busqueda.
         
-        private ListBox lstbSeleccionado;
+        private ListBox lstbSeleccionado;//para actualizar la lista de los empleados tras cualquier evento, update, insert, select..
         public Form1()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga el formulario con los departamentos en el listbox, abre la conexion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
             lstbBuscarPor.Items.Add("Apellido");
@@ -55,6 +60,12 @@ namespace ModoConectado2
             
             }
 
+        /// <summary>
+        /// carga los empleados en funcion del departamento escogido. Sin parametrizar porque no se introducen datos desde el exterior
+        /// del programa.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstbDepartamento_Click(object sender, EventArgs e)
         {
             ReseteaCampos();
@@ -113,7 +124,6 @@ namespace ModoConectado2
                 }
 
                 this.setTextBox(index);
-
                 
             }
             else if (opcion.Equals("btnBajar") && index<=max)
@@ -123,11 +133,15 @@ namespace ModoConectado2
                     index++;
                 }
                 this.setTextBox(index);
-
-                
+ 
             }
         }
 
+        /// <summary>
+        /// Método para establecer los campos de texto segun la seleccion con flechas, lee los listbox cargados de la BD
+        ///  Para evitar escribir en varios sitios lo mismo.
+        /// </summary>
+        /// <param name="index"></param>
         private void setTextBox(int index)
         {
             try
@@ -157,26 +171,8 @@ namespace ModoConectado2
             ListBox ltbEscogido = (ListBox)sender;
             sEscogido = ltbEscogido.SelectedItem.ToString();
 
-            txtbBuscar.Text = "";//resetea cada vez que se cambia de opcion
+            txtbBuscar.Text = "";//resetea el campo que usa el usuario cada vez que se cambia de opcion en la lista
 
-            /*IDbCommand cmd = ctn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM EMPLE WHERW ?=?";
-
-
-            switch (sEscogido)
-            {
-                case "Apellidos":
-                    break;
-                case "Oficio":
-                    break;
-                case "Fecha Alta":
-                    break;
-                case "Salario":
-                    break;
-                case "Comisión":
-                    break;
-              
-            }*/
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -216,9 +212,7 @@ namespace ModoConectado2
 
                 MessageBox.Show("Introduzca el dato por el que filtrar la búsqueda y escoja una opcion de la lista.");
             }
-            
-
-            
+  
         }
 
         private void ReseteaCampos()
@@ -254,14 +248,12 @@ namespace ModoConectado2
                     lstbDepartamento_Click(lstbSeleccionado, e);//vuelve a actualizar la lista.
 
                 }catch(Exception ex) { MessageBox.Show(ex.Message); }
-                
 
             }
             else
             {
                 MessageBox.Show("Escoja una fila a actualizar.");
             }
-
 
         }
 
@@ -274,6 +266,11 @@ namespace ModoConectado2
             txtIDdepartamento.Text = lstbIDdepartamento.SelectedItem.ToString();
         }
 
+        /// <summary>
+        /// Insert en BD parametrizado con valores adecuados a cada campo de la tabla.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             if (!(txtIDdepartamento.Text.Equals("")))
@@ -282,30 +279,10 @@ namespace ModoConectado2
                 cmd.CommandText="select MAX(EMP_NO) from emple;";//para buscar el mayor ID
 
                 int idEmpleadoSIgiente = Convert.ToInt32(cmd.ExecuteScalar()) + 1;//suma +1, para siguiente empleado.
-                //string valido = Convert.ToString(idEmpleadoSIgiente);
+                
 
                 try
                 {
-
-                    /*cmd = ctn.CreateCommand();
-                    cmd.CommandText = "INSERT INTO EMPLE (EMP_NO, APELLIDO, OFICIO, FECHA_ALT, SALARIO, COMISION, DEPT_NO) " +
-                              "VALUES (@id, @ape, @ofi, @fech, @sal, @com, @dep);";
-
-                    cmd.Parameters.Clear();
-
-                    cmd.Parameters.Add(new OleDbParameter("@ape", txtApellidos.Text));
-                    cmd.Parameters.Add(new OleDbParameter("@ofi", txtOficio.Text));
-                    cmd.Parameters.Add(new OleDbParameter("@fech", txtFechaAlta.Text));
-                    cmd.Parameters.Add(new OleDbParameter("@sal", txtSalario.Text));
-                    cmd.Parameters.Add(new OleDbParameter("@com", txtComision.Text));
-                    cmd.Parameters.Add(new OleDbParameter("@id", idEmpleadoSIgiente));
-                    //cmd.Parameters.Add(new OleDbParameter("@id", valido));
-                    cmd.Parameters.Add(new OleDbParameter("@dep", txtIDdepartamento.Text));
-
-                    cmd.ExecuteNonQuery();
-
-                    lstbDepartamento_Click(lstbSeleccionado, e);//vuelve a actualizar la lista.*/
-
 
                     cmd.CommandText = "INSERT INTO EMPLE (EMP_NO, APELLIDO, OFICIO, FECHA_ALT, SALARIO, COMISION, DEPT_NO) " +
                               "VALUES (?,?,?,?,?,?,?);";
@@ -339,19 +316,32 @@ namespace ModoConectado2
         {
             if (!(txtIDdepartamento.Text.Equals("")))
             {
-                IDbCommand cmd = ctn.CreateCommand();
-                cmd.CommandText = "DELETE from emple where EMP_NO=?";
+                try
+                {
+                    IDbCommand cmd = ctn.CreateCommand();
+                    cmd.CommandText = "DELETE from emple where EMP_NO=?";
 
-                cmd.Parameters.Add(new OleDbParameter("?", OleDbType.Integer) { Value = int.Parse(txtOcultoID.Text) });
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Borrado");
-                lstbDepartamento_Click(lstbSeleccionado, e);
+                    cmd.Parameters.Add(new OleDbParameter("?", OleDbType.Integer) { Value = int.Parse(txtOcultoID.Text) });
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Borrado");
+                    lstbDepartamento_Click(lstbSeleccionado, e);
+                }catch(Exception ex) { MessageBox.Show(ex.Message+"\nEscoja un empleado a borrar"); }
 
             }
             else
             {
                 MessageBox.Show("Escoja un empleado a borrar.");
             }
+        }
+
+        /// <summary>
+        /// Anula el boton x de la ventana, obliga a cerrar con el boton designado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }
