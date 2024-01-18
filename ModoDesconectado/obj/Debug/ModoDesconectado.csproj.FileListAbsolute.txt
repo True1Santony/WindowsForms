@@ -1,0 +1,10 @@
+C:\Users\espar\source\repos\ModoDesconectado\bin\Debug\ModoDesconectado.exe.config
+C:\Users\espar\source\repos\ModoDesconectado\bin\Debug\ModoDesconectado.exe
+C:\Users\espar\source\repos\ModoDesconectado\bin\Debug\ModoDesconectado.pdb
+C:\Users\espar\source\repos\ModoDesconectado\obj\Debug\ModoDesconectado.csproj.AssemblyReference.cache
+C:\Users\espar\source\repos\ModoDesconectado\obj\Debug\ModoDesconectado.Form1.resources
+C:\Users\espar\source\repos\ModoDesconectado\obj\Debug\ModoDesconectado.Properties.Resources.resources
+C:\Users\espar\source\repos\ModoDesconectado\obj\Debug\ModoDesconectado.csproj.GenerateResource.cache
+C:\Users\espar\source\repos\ModoDesconectado\obj\Debug\ModoDesconectado.csproj.CoreCompileInputs.cache
+C:\Users\espar\source\repos\ModoDesconectado\obj\Debug\ModoDesconectado.exe
+C:\Users\espar\source\repos\ModoDesconectado\obj\Debug\ModoDesconectado.pdb
