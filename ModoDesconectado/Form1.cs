@@ -16,7 +16,7 @@ namespace ModoDesconectado
 
         private OleDbConnection ctn;
         private DataSet ds = new DataSet();
-        private OleDbDataAdapter da;
+        private OleDbDataAdapter daCategories, daProducts;
         private int y = 60;//posicion inicial radiobutons
 
         public Form1()
@@ -35,7 +35,7 @@ namespace ModoDesconectado
 
             // Llenar la tabla "categorias"
             cmd.CommandText = "select * from categories;";
-            OleDbDataAdapter daCategories = new OleDbDataAdapter();
+            daCategories = new OleDbDataAdapter();
             OleDbCommandBuilder cbCategories = new OleDbCommandBuilder(daCategories);
             daCategories.SelectCommand = cmd;
             daCategories.FillSchema(ds, SchemaType.Mapped, "categorias");
@@ -43,7 +43,7 @@ namespace ModoDesconectado
 
             // Llenar la tabla "productos"
             cmd.CommandText = "select * from Products;";
-            OleDbDataAdapter daProducts = new OleDbDataAdapter();
+            daProducts = new OleDbDataAdapter();
             OleDbCommandBuilder cbProducts = new OleDbCommandBuilder(daProducts);
             daProducts.SelectCommand = cmd;
             daProducts.FillSchema(ds, SchemaType.Mapped, "productos");
@@ -59,7 +59,7 @@ namespace ModoDesconectado
                 RadioButton radButton = new RadioButton();
                 radButton.Text = registro["CategoryName"].ToString();//nombre de las categorias
                 radButton.Tag = registro["CategoryID"];//pk de la tabla
-                radButton.Location = new Point(20,y);
+                radButton.Location = new Point(20, y);
                 y += 40;
                 radButton.Click += new System.EventHandler(this.SelecionaRadioButton);
                 Controls.Add(radButton);
@@ -75,13 +75,13 @@ namespace ModoDesconectado
             lstbUnitStock.Items.Clear();
 
             RadioButton radButSelecion = (RadioButton)sender;
-            int clave = (int) radButSelecion.Tag;
+            int clave = (int)radButSelecion.Tag;
 
             DataTable tabla = ds.Tables["productos"];
             foreach (DataRow registro in tabla.Rows)
 
             {
-                if ((int)registro["CategoryID"]==clave)
+                if ((int)registro["CategoryID"] == clave)
                 {
                     this.lstbProductId.Items.Add(registro["ProductID"]);
                     this.lstbProductName.Items.Add(registro["ProductName"]);
@@ -129,7 +129,28 @@ namespace ModoDesconectado
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            int clave;
+            int.TryParse(txtbProductId.Text, out clave);
 
+            DataTable tabla = ds.Tables["productos"];
+            foreach (DataRow registro in tabla.Rows)
+            {
+                if ((int)registro["ProductID"] == clave)
+                {
+
+                    registro.BeginEdit();
+                    registro["ProductName"] = txtbProductName.Text.ToString();
+                    registro["UnitPrice"] = txtbUnitPrice.Text.ToString();
+                    registro["UnitsInStock"] = txtbUnitStock.Text.ToString();
+
+                    registro.EndEdit();//solo va a haber uno.
+                }
+            }
+
+            ctn.Open();
+            daProducts.Update(ds, "productos");
+            ds.AcceptChanges();
+            ctn.Close();
         }
     }
 }
