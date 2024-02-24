@@ -1,0 +1,14 @@
+C:\Users\espar\source\repos\CreacionDeControles\bin\Debug\CreacionDeControles.exe.config
+C:\Users\espar\source\repos\CreacionDeControles\bin\Debug\CreacionDeControles.exe
+C:\Users\espar\source\repos\CreacionDeControles\bin\Debug\CreacionDeControles.pdb
+C:\Users\espar\source\repos\CreacionDeControles\obj\Debug\CreacionDeControles.csproj.AssemblyReference.cache
+C:\Users\espar\source\repos\CreacionDeControles\obj\Debug\CreacionDeControles.Properties.Resources.resources
+C:\Users\espar\source\repos\CreacionDeControles\obj\Debug\CreacionDeControles.csproj.GenerateResource.cache
+C:\Users\espar\source\repos\CreacionDeControles\obj\Debug\CreacionDeControles.csproj.CoreCompileInputs.cache
+C:\Users\espar\source\repos\CreacionDeControles\obj\Debug\CreacionDeControles.exe
+C:\Users\espar\source\repos\CreacionDeControles\obj\Debug\CreacionDeControles.pdb
+C:\Users\espar\source\repos\CreacionDeControles\obj\Debug\CreacionDeControles.FichaCliente.resources
+C:\Users\espar\source\repos\CreacionDeControles\obj\Debug\CreacionDeControles.Form1.resources
+C:\Users\espar\source\repos\CreacionDeControles\bin\Debug\MiControlHotel.dll
+C:\Users\espar\source\repos\CreacionDeControles\bin\Debug\MiControlHotel.pdb
+C:\Users\espar\source\repos\CreacionDeControles\obj\Debug\CreacionDeControles.csproj.CopyComplete
