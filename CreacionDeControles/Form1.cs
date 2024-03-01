@@ -14,6 +14,7 @@ namespace CreacionDeControles
     public partial class Form1 : Form
     {
         private List<Cliente> clientes;
+        private int indiceCombobox;
         public Form1()
         {
             InitializeComponent();
@@ -83,7 +84,7 @@ namespace CreacionDeControles
         {
             miControl.getComboBoxClientes().Items.Clear();//limpia la lista del comboBox si no no se actualizan los nombres
 
-            lista.Sort((c1, c2) => c1.getNombre().CompareTo(c2.getNombre()));
+            lista.Sort((c1, c2) => c1.getNombre().CompareTo(c2.getNombre()));//woow!! ordena por nombre cual equals(override)de clase fuese, xd.
 
             foreach (Cliente c in clientes)// agrego al comboBox ordenados
             {
@@ -153,11 +154,26 @@ namespace CreacionDeControles
                     break;
                 case "tsButtonGuardar":
 
+                    if (miControl.getTextBoxNombre().Text.Equals("") ||
+                        miControl.getTextBoxApellido().Text.Equals("") ||
+                        miControl.getTextBoxTelefono().Text.Equals(""))
+                    {
+                        MessageBox.Show("Porfavor rellene los campos del cliente");
+                    }
+                    else
+                    {
+                        clientes[indiceCombobox].setApellido(miControl.getTextBoxApellido().Text);
+                        clientes[indiceCombobox].setNombre(miControl.getTextBoxNombre().Text);
+                        clientes[indiceCombobox].setTelefono(miControl.getTextBoxTelefono().Text);
+                        clientes[indiceCombobox].setComentario(miControl.getTextBoxComentario().Text);
 
-                    //PonerEnBlancoCampos();
+                        OrdenaListayAgregaAlComboBox(clientes);//no va a ordenar pero si refrescará el combobox
 
-                    statusLabel.Text = "Cliente Modificado";
+                        PonerEnBlancoCampos();
+                        statusLabel.Text = "Cliente Modificado";
+                    }
                     break;
+
                 case "tsButtonBorrar":
                     Boolean borrado = false;
                     if (miControl.getTextBoxNombre().Text.Equals(""))//comprobando si el campo nombre esta vacio
@@ -212,7 +228,7 @@ namespace CreacionDeControles
         {
             ComboBox comboBox = (ComboBox)sender;
 
-            int indiceCombobox = comboBox.SelectedIndex;
+            indiceCombobox = comboBox.SelectedIndex;
 
             Cliente clienteSeleccionado = clientes[indiceCombobox];//se recupera de la lista ordenada
 

@@ -37,13 +37,16 @@ namespace CreacionDeControles
             this.tsButtonNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsButtonGuardar = new System.Windows.Forms.ToolStripButton();
             this.tsButtonBorrar = new System.Windows.Forms.ToolStripButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // miControl
             // 
-            this.miControl.Location = new System.Drawing.Point(577, 29);
+            this.miControl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.miControl.Location = new System.Drawing.Point(516, 29);
             this.miControl.Name = "miControl";
             this.miControl.Size = new System.Drawing.Size(327, 343);
             this.miControl.TabIndex = 0;
@@ -51,11 +54,12 @@ namespace CreacionDeControles
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 608);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 407);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(941, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(847, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -66,13 +70,14 @@ namespace CreacionDeControles
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsButtonNuevo,
             this.tsButtonGuardar,
             this.tsButtonBorrar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(941, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(847, 38);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -104,14 +109,27 @@ namespace CreacionDeControles
             this.tsButtonBorrar.Text = "Borrar";
             this.tsButtonBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 41);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(498, 331);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 630);
+            this.ClientSize = new System.Drawing.Size(847, 429);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.miControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -119,6 +137,7 @@ namespace CreacionDeControles
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,6 +152,7 @@ namespace CreacionDeControles
         private System.Windows.Forms.ToolStripButton tsButtonNuevo;
         private System.Windows.Forms.ToolStripButton tsButtonGuardar;
         private System.Windows.Forms.ToolStripButton tsButtonBorrar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
