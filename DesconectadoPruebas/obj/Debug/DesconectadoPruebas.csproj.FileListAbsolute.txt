@@ -1,0 +1,10 @@
+C:\Users\espar\source\repos\DesconectadoPruebas\obj\Debug\DesconectadoPruebas.csproj.AssemblyReference.cache
+C:\Users\espar\source\repos\DesconectadoPruebas\obj\Debug\DesconectadoPruebas.Form1.resources
+C:\Users\espar\source\repos\DesconectadoPruebas\obj\Debug\DesconectadoPruebas.Properties.Resources.resources
+C:\Users\espar\source\repos\DesconectadoPruebas\obj\Debug\DesconectadoPruebas.csproj.GenerateResource.cache
+C:\Users\espar\source\repos\DesconectadoPruebas\obj\Debug\DesconectadoPruebas.csproj.CoreCompileInputs.cache
+C:\Users\espar\source\repos\DesconectadoPruebas\bin\Debug\DesconectadoPruebas.exe.config
+C:\Users\espar\source\repos\DesconectadoPruebas\bin\Debug\DesconectadoPruebas.exe
+C:\Users\espar\source\repos\DesconectadoPruebas\bin\Debug\DesconectadoPruebas.pdb
+C:\Users\espar\source\repos\DesconectadoPruebas\obj\Debug\DesconectadoPruebas.exe
+C:\Users\espar\source\repos\DesconectadoPruebas\obj\Debug\DesconectadoPruebas.pdb

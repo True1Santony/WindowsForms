@@ -1,0 +1,8 @@
+C:\Users\espar\source\repos\MiControlHotel\obj\Debug\MiControlHotel.csproj.AssemblyReference.cache
+C:\Users\espar\source\repos\MiControlHotel\obj\Debug\MiControlHotel.UserControl1.resources
+C:\Users\espar\source\repos\MiControlHotel\obj\Debug\MiControlHotel.csproj.GenerateResource.cache
+C:\Users\espar\source\repos\MiControlHotel\obj\Debug\MiControlHotel.csproj.CoreCompileInputs.cache
+C:\Users\espar\source\repos\MiControlHotel\bin\Debug\MiControlHotel.dll
+C:\Users\espar\source\repos\MiControlHotel\bin\Debug\MiControlHotel.pdb
+C:\Users\espar\source\repos\MiControlHotel\obj\Debug\MiControlHotel.dll
+C:\Users\espar\source\repos\MiControlHotel\obj\Debug\MiControlHotel.pdb
