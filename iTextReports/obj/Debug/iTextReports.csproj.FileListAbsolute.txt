@@ -1,0 +1,14 @@
+F:\WindowsForms\iTextReports\bin\Debug\iTextReports.exe.config
+F:\WindowsForms\iTextReports\bin\Debug\iTextReports.exe
+F:\WindowsForms\iTextReports\bin\Debug\iTextReports.pdb
+F:\WindowsForms\iTextReports\bin\Debug\BouncyCastle.Crypto.dll
+F:\WindowsForms\iTextReports\bin\Debug\itextsharp.dll
+F:\WindowsForms\iTextReports\bin\Debug\itextsharp.xml
+F:\WindowsForms\iTextReports\obj\Debug\iTextReports.csproj.AssemblyReference.cache
+F:\WindowsForms\iTextReports\obj\Debug\iTextReports.Form1.resources
+F:\WindowsForms\iTextReports\obj\Debug\iTextReports.Properties.Resources.resources
+F:\WindowsForms\iTextReports\obj\Debug\iTextReports.csproj.GenerateResource.cache
+F:\WindowsForms\iTextReports\obj\Debug\iTextReports.csproj.CoreCompileInputs.cache
+F:\WindowsForms\iTextReports\obj\Debug\iTextReports.csproj.CopyComplete
+F:\WindowsForms\iTextReports\obj\Debug\iTextReports.exe
+F:\WindowsForms\iTextReports\obj\Debug\iTextReports.pdb
